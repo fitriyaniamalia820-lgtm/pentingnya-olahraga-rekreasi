@@ -1,0 +1,1343 @@
+
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Judul laman website -->
+    <title>Olahraga Rekreasi | Amalia Fitriyani</title>
+
+    <meta name="description"
+          content="Website edukasi tentang olahraga rekreasi,
+          manfaat, jenis kegiatan, dan gaya hidup sehat.">
+
+    <!-- Font Poppins untuk mempercantik judul -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap"
+          rel="stylesheet">
+
+    <style>
+        /* ===== DESAIN UTAMA WEBSITE ===== */
+        :root {
+            --utama: #087e8b;
+            --gelap: #064d58;
+            --aksen: #ffb703;
+            --latar: #f1f8fa;
+            --kartu: #ffffff;
+            --teks: #253744;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            margin: 0;
+            font-family: 'Segoe UI', Arial, sans-serif;
+            font-size: 16px;
+            line-height: 1.8;
+            background-color: var(--latar);
+            color: var(--teks);
+            transition: 0.3s;
+        }
+
+        /* ===== HEADER DENGAN BACKGROUND GAMBAR ===== */
+        header {
+            background:
+                linear-gradient(
+                    rgba(0, 40, 50, 0.65),
+                    rgba(0, 75, 85, 0.65)
+                ),
+                url('https://images.unsplash.com/photo-1552674605-db6ffd4facb5?auto=format&fit=crop&w=1600&q=85');
+
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+
+            min-height: 500px;
+            padding: 60px 20px;
+
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+
+            text-align: center;
+            color: white;
+        }
+
+        header h1 {
+            font-family: 'Poppins', sans-serif;
+            font-size: clamp(32px, 6vw, 58px);
+            font-weight: 800;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: white;
+            text-shadow: 2px 3px 8px rgba(0,0,0,0.5);
+            margin: 0 0 15px;
+            text-align: center;
+        }
+
+        header p {
+            font-family: 'Poppins', sans-serif;
+            font-size: clamp(15px, 2.5vw, 21px);
+            color: #ffffff;
+            max-width: 700px;
+            text-align: center;
+            margin: 8px auto;
+        }
+
+        header .subjudul {
+            color: #ffdc73;
+            font-weight: 600;
+            letter-spacing: 1px;
+        }
+
+        header button {
+            margin-top: 25px;
+            padding: 13px 28px;
+            border-radius: 30px;
+            background: #ffb703;
+            color: #17333b;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        header button:hover {
+            background: white;
+            transform: scale(1.05);
+        }
+
+        /* ===== NAVIGASI ===== */
+        nav {
+            background: var(--gelap);
+            padding: 14px;
+            text-align: center;
+            position: sticky;
+            top: 0;
+            z-index: 10;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 8px 12px;
+            display: inline-block;
+            font-weight: bold;
+        }
+
+        nav a:hover {
+            color: var(--aksen);
+        }
+
+        main {
+            max-width: 1100px;
+            margin: auto;
+            padding: 20px;
+        }
+
+        section {
+            background: var(--kartu);
+            margin: 28px 0;
+            padding: 30px;
+            border-radius: 18px;
+            box-shadow: 0 5px 18px rgba(0,0,0,0.07);
+            animation: muncul 0.7s ease;
+        }
+
+        h2 {
+            color: var(--utama);
+            font-size: 27px;
+            border-bottom: 3px solid var(--aksen);
+            padding-bottom: 10px;
+        }
+
+        h3 {
+            color: var(--gelap);
+        }
+
+        p {
+            margin-bottom: 20px;
+            text-align: justify;
+        }
+
+        /* ===== IDENTITAS MAHASISWA ===== */
+        .identitas {
+            background: #e0f5f4;
+            border-left: 6px solid var(--utama);
+        }
+
+        .identitas p {
+            margin: 8px 0;
+        }
+
+        /* ===== TULISAN YANG DISOROT ===== */
+        mark {
+            background-color: #ffe08a;
+            color: #202020;
+            padding: 3px 6px;
+            border-radius: 4px;
+        }
+
+        .highlight {
+            background-color: #d8f5ec;
+            color: #075b50;
+            padding: 12px;
+            border-radius: 8px;
+        }
+
+        /* ===== KARTU INFORMASI ===== */
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 20px;
+        }
+
+        .card {
+            background: #eaf8f8;
+            padding: 22px;
+            border-radius: 15px;
+            border: 1px solid #c8eeee;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-7px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+        }
+
+        .card h3 {
+            margin-top: 5px;
+        }
+
+        /* ===== GAMBAR ===== */
+        img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 12px;
+        }
+
+        figure {
+            margin: 15px 0;
+        }
+
+        figcaption {
+            text-align: center;
+            font-size: 14px;
+            color: #667781;
+            margin-top: 8px;
+        }
+
+        .galeri {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+            gap: 20px;
+        }
+
+        .galeri img {
+            width: 100%;
+            height: 210px;
+            object-fit: cover;
+        }
+
+        /* ===== TABEL ===== */
+        .tabel-wrapper {
+            overflow-x: auto;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        th, td {
+            border: 1px solid #c5d9dd;
+            padding: 13px;
+            text-align: left;
+        }
+
+        th {
+            background: var(--utama);
+            color: white;
+        }
+
+        tr:nth-child(even) {
+            background: #eaf8f8;
+        }
+
+        /* ===== KUTIPAN ===== */
+        blockquote {
+            background: #e8f6f3;
+            border-left: 5px solid #079b8c;
+            padding: 20px;
+            margin: 20px 0;
+            font-style: italic;
+            border-radius: 8px;
+        }
+
+        /* ===== TOMBOL ===== */
+        button, .tombol {
+            background: var(--utama);
+            color: white;
+            border: none;
+            border-radius: 9px;
+            padding: 12px 20px;
+            cursor: pointer;
+            font-size: 15px;
+            display: inline-block;
+            text-decoration: none;
+        }
+
+        button:hover, .tombol:hover {
+            background: var(--gelap);
+        }
+
+        /* ===== FORMULIR ===== */
+        input, textarea, select {
+            width: 100%;
+            padding: 12px;
+            margin: 7px 0 17px;
+            border: 1px solid #b7cdd1;
+            border-radius: 8px;
+            font-family: inherit;
+        }
+
+        label {
+            font-weight: 600;
+        }
+
+        /* ===== FAQ ===== */
+        details {
+            background: #eaf8f8;
+            padding: 15px;
+            border-radius: 10px;
+            margin-bottom: 12px;
+        }
+
+        summary {
+            cursor: pointer;
+            font-weight: bold;
+            color: var(--gelap);
+        }
+
+        /* ===== FOOTER ===== */
+        footer {
+            background: #064d58;
+            color: white;
+            text-align: center;
+            padding: 25px;
+            margin-top: 30px;
+        }
+
+        footer p {
+            text-align: center;
+            margin: 5px;
+        }
+
+        /* ===== TOMBOL KEMBALI KE ATAS ===== */
+        #keAtas {
+            position: fixed;
+            right: 20px;
+            bottom: 20px;
+            display: none;
+            z-index: 20;
+        }
+
+        /* ===== MODE GELAP ===== */
+        body.dark {
+            --latar: #14242c;
+            --kartu: #203640;
+            --teks: #f1f6f8;
+            --utama: #54d6cc;
+            --gelap: #0b313b;
+        }
+
+        body.dark .card,
+        body.dark details,
+        body.dark blockquote,
+        body.dark .identitas {
+            background: #29444e;
+            color: white;
+        }
+
+        body.dark h3,
+        body.dark summary {
+            color: #9cebe4;
+        }
+
+        body.dark tr:nth-child(even) {
+            background: #29444e;
+        }
+
+        body.dark th {
+            background: #075f68;
+        }
+
+        body.dark figcaption {
+            color: #c6d8dc;
+        }
+
+        /* ===== ANIMASI ===== */
+        @keyframes muncul {
+            from {
+                opacity: 0;
+                transform: translateY(15px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* ===== RESPONSIF UNTUK HP ===== */
+        @media (max-width: 600px) {
+            section {
+                padding: 20px;
+            }
+
+            nav a {
+                margin: 5px;
+                font-size: 13px;
+            }
+
+            h2 {
+                font-size: 23px;
+            }
+
+            header {
+                min-height: 420px;
+                padding: 40px 18px;
+            }
+
+            header h1 {
+                letter-spacing: 1px;
+            }
+        }
+    </style>
+</head>
+
+<body id="atas">
+
+    <!-- ===== HEADER WEBSITE ===== -->
+    <header>
+        <h1>🌿 OLAHRAGA REKREASI</h1>
+
+        <p class="subjudul">
+            HIDUP SEHAT, AKTIF, DAN MENYENANGKAN
+        </p>
+
+        <p>
+            Jelajahi dunia olahraga rekreasi yang penuh
+            keseruan, kebersamaan, dan manfaat
+            untuk kesehatan tubuh serta pikiran.
+        </p>
+
+        <button onclick="gantiTema()">
+            🌙 Ganti Tema
+        </button>
+    </header>
+
+    <!-- ===== MENU NAVIGASI ===== -->
+    <nav aria-label="Navigasi utama">
+        <a href="#identitas">Identitas</a>
+        <a href="#pengertian">Pengertian</a>
+        <a href="#manfaat">Manfaat</a>
+        <a href="#jenis">Jenis</a>
+        <a href="#galeri">Galeri</a>
+        <a href="#tabel">Tabel</a>
+        <a href="#faq">FAQ</a>
+        <a href="#kontak">Kontak</a>
+    </nav>
+
+    <main>
+
+        <!-- ===== IDENTITAS MAHASISWA ===== -->
+        <section id="identitas" class="identitas">
+            <h2>👩‍🎓 Identitas Mahasiswa</h2>
+
+            <p><strong>Nama:</strong> Amalia Fitriyani</p>
+            <p><strong>NIM:</strong> 1605625006</p>
+            <p><strong>Program Studi:</strong> Olahraga Rekreasi</p>
+            <p><strong>Fakultas:</strong> Ilmu Keolahragaan dan Kesehatan</p>
+            <p><strong>Universitas:</strong> Universitas Negeri Jakarta</p>
+
+            <p>
+                Website ini dibuat sebagai media pembelajaran
+                untuk memperkenalkan olahraga rekreasi kepada
+                masyarakat sekaligus memenuhi tugas pembuatan
+                website menggunakan bahasa HTML.
+            </p>
+        </section>
+
+        <!-- ===== PENDAHULUAN ===== -->
+        <section id="pengertian">
+            <h2>1. Mengenal Olahraga Rekreasi</h2>
+
+            <h3>Apa Itu Olahraga Rekreasi?</h3>
+
+            <p>
+                Olahraga rekreasi merupakan aktivitas fisik yang
+                dilakukan pada waktu luang dengan tujuan memperoleh
+                kesenangan, menjaga kebugaran tubuh, dan memberikan
+                pengalaman yang menyenangkan. Berbeda dengan olahraga
+                prestasi yang lebih berfokus pada pertandingan dan
+                pencapaian hasil, olahraga rekreasi lebih mengutamakan
+                <b>kesehatan, kebahagiaan, dan partisipasi.</b>
+            </p>
+
+            <p>
+                Dalam kehidupan sehari-hari, olahraga rekreasi dapat
+                dilakukan melalui berbagai kegiatan sederhana seperti
+                berjalan santai, bersepeda, berenang, senam bersama,
+                hingga permainan kelompok. Aktivitas tersebut tidak
+                selalu membutuhkan peralatan mahal atau tempat khusus,
+                karena bisa disesuaikan dengan kondisi dan kemampuan
+                masing-masing individu.
+            </p>
+
+            <p>
+                Menurut saya, olahraga rekreasi merupakan salah satu
+                kegiatan yang penting karena tidak hanya membuat tubuh
+                bergerak, tetapi juga membantu pikiran menjadi lebih
+                segar. Apalagi bagi mahasiswa yang memiliki banyak
+                kegiatan perkuliahan, olahraga rekreasi bisa menjadi
+                cara untuk mengurangi kejenuhan setelah belajar.
+            </p>
+
+            <p class="highlight">
+                <strong>Hal yang perlu diingat:</strong>
+                <mark>Olahraga tidak harus selalu tentang menang
+                atau kalah, tetapi juga tentang menikmati proses
+                bergerak dan menjaga kesehatan.</mark>
+            </p>
+
+            <h3>Perbedaan Olahraga Rekreasi dan Prestasi</h3>
+
+            <p>
+                Olahraga prestasi biasanya memiliki target berupa
+                kemenangan, peningkatan kemampuan, atau pencapaian
+                rekor tertentu. Sementara itu, olahraga rekreasi
+                lebih menekankan kegiatan yang bersifat
+                <i>santai, menyenangkan, dan dapat diikuti
+                berbagai kalangan.</i>
+            </p>
+
+            <p>
+                Contohnya, seseorang yang berenang untuk mengikuti
+                kejuaraan termasuk melakukan olahraga prestasi.
+                Namun, seseorang yang berenang bersama keluarga
+                untuk mengisi akhir pekan dapat dikatakan sedang
+                melakukan olahraga rekreasi.
+            </p>
+
+            <blockquote>
+                "Olahraga bukan hanya tentang menjadi yang terbaik,
+                tetapi juga tentang menjadi lebih sehat dan bahagia
+                melalui setiap gerakan."
+                <br>
+                <small>— Pesan motivasi olahraga</small>
+            </blockquote>
+        </section>
+
+        <!-- ===== MANFAAT ===== -->
+        <section id="manfaat">
+            <h2>2. Manfaat Olahraga Rekreasi</h2>
+
+            <p>
+                Olahraga rekreasi mempunyai banyak manfaat bagi
+                kehidupan manusia, baik dari segi fisik, mental,
+                maupun sosial. Jika dilakukan secara rutin dan
+                sesuai kemampuan, kegiatan ini dapat membantu
+                meningkatkan kualitas hidup seseorang.
+            </p>
+
+            <div class="grid">
+
+                <article class="card">
+                    <h3>❤️ Kesehatan Fisik</h3>
+                    <p>
+                        Membantu menjaga kebugaran tubuh,
+                        meningkatkan daya tahan, melatih kekuatan
+                        otot, serta mendukung kesehatan jantung.
+                    </p>
+                </article>
+
+                <article class="card">
+                    <h3>🧠 Kesehatan Mental</h3>
+                    <p>
+                        Membantu mengurangi stres, memperbaiki
+                        suasana hati, dan memberikan kesempatan
+                        untuk beristirahat dari aktivitas rutin.
+                    </p>
+                </article>
+
+                <article class="card">
+                    <h3>🤝 Hubungan Sosial</h3>
+                    <p>
+                        Membuka kesempatan untuk berinteraksi,
+                        menambah teman, meningkatkan komunikasi,
+                        serta membangun kerja sama dengan orang lain.
+                    </p>
+                </article>
+
+                <article class="card">
+                    <h3>🌟 Pengembangan Diri</h3>
+                    <p>
+                        Melatih rasa percaya diri, kedisiplinan,
+                        tanggung jawab, kreativitas, dan keberanian
+                        mencoba kegiatan baru.
+                    </p>
+                </article>
+
+            </div>
+
+            <h3>Mengapa Harus Dilakukan Secara Rutin?</h3>
+
+            <p>
+                Melakukan olahraga rekreasi secara rutin dapat
+                membantu membentuk kebiasaan hidup aktif.
+                Tidak perlu langsung melakukan olahraga berat.
+                Kita bisa memulainya dari aktivitas sederhana
+                seperti berjalan kaki selama beberapa menit,
+                kemudian meningkatkan durasinya secara bertahap.
+            </p>
+
+            <p>
+                Sebagai contoh, aktivitas selama
+                <strong>30 menit</strong> dapat dibagi menjadi
+                2 sesi masing-masing 15 menit.
+                Angka tersebut hanyalah contoh pembagian waktu,
+                bukan aturan yang harus sama untuk semua orang.
+            </p>
+        </section>
+
+        <!-- ===== JENIS OLAHRAGA ===== -->
+        <section id="jenis">
+            <h2>3. Jenis-Jenis Olahraga Rekreasi</h2>
+
+            <p>
+                Ada banyak pilihan olahraga rekreasi yang dapat
+                dilakukan oleh anak-anak, remaja, orang dewasa,
+                hingga lanjut usia. Pemilihan kegiatan sebaiknya
+                mempertimbangkan minat, kondisi fisik,
+                lingkungan, dan keamanan peserta.
+            </p>
+
+            <!-- Nested list atau daftar bertingkat -->
+            <ol>
+                <li>
+                    <strong>Olahraga Rekreasi di Darat</strong>
+                    <ul>
+                        <li>Jogging atau jalan santai</li>
+                        <li>Bersepeda bersama</li>
+                        <li>Senam rekreasi</li>
+                        <li>Permainan tradisional
+                            <ul>
+                                <li>Gobak sodor</li>
+                                <li>Engklek</li>
+                                <li>Bentengan</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+
+                <li>
+                    <strong>Olahraga Rekreasi di Air</strong>
+                    <ul>
+                        <li>Berenang santai</li>
+                        <li>Permainan bola di kolam renang</li>
+                        <li>Polo air rekreasi</li>
+                        <li>Permainan estafet air</li>
+                    </ul>
+                </li>
+
+                <li>
+                    <strong>Olahraga Rekreasi di Alam Terbuka</strong>
+                    <ul>
+                        <li>Hiking atau jalan di alam</li>
+                        <li>Camping</li>
+                        <li>Outbound
+                            <ul>
+                                <li>Permainan kerja sama</li>
+                                <li>Permainan kepemimpinan</li>
+                                <li>Permainan pemecahan masalah</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+            </ol>
+
+            <h3>Contoh Kegiatan Favorit</h3>
+
+            <div class="grid">
+                <div class="card">
+                    <h3>🏊 Berenang</h3>
+                    <p>
+                        Berenang menjadi salah satu kegiatan
+                        rekreasi yang menyenangkan karena dapat
+                        dilakukan bersama teman maupun keluarga.
+                        Aktivitas ini juga melatih koordinasi
+                        gerak dan kebugaran tubuh.
+                    </p>
+                </div>
+
+                <div class="card">
+                    <h3>🚴 Bersepeda</h3>
+                    <p>
+                        Bersepeda santai dapat menjadi pilihan
+                        untuk menikmati lingkungan sekitar
+                        sambil melatih daya tahan tubuh.
+                    </p>
+                </div>
+
+                <div class="card">
+                    <h3>🏕️ Outbound</h3>
+                    <p>
+                        Outbound merupakan kegiatan yang
+                        memadukan aktivitas fisik, permainan,
+                        kerja sama, dan pengalaman belajar
+                        melalui kegiatan langsung.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== GAMBAR DAN GALERI ===== -->
+        <section id="galeri">
+            <h2>4. Galeri Olahraga Rekreasi</h2>
+
+            <p>
+                Berikut beberapa ilustrasi aktivitas olahraga
+                yang dapat dijadikan pilihan untuk mengisi
+                waktu luang dengan kegiatan positif.
+            </p>
+
+            <div class="galeri">
+
+                <figure>
+                    <img
+                      src="https://images.unsplash.com/photo-1530549387789-4c1017266635?auto=format&fit=crop&w=900&q=80"
+                      alt="Aktivitas berenang di kolam"
+                      loading="lazy">
+                    <figcaption>
+                        Gambar 1. Berenang sebagai aktivitas rekreasi.
+                    </figcaption>
+                </figure>
+
+                <figure>
+                    <img
+                      src="https://images.unsplash.com/photo-1552674605-db6ffd4facb5?auto=format&fit=crop&w=900&q=80"
+                      alt="Aktivitas lari di luar ruangan"
+                      loading="lazy">
+                    <figcaption>
+                        Gambar 2. Jogging untuk menjaga kebugaran.
+                    </figcaption>
+                </figure>
+
+                <figure>
+                    <img
+                      src="https://images.unsplash.com/photo-1472396961693-142e6e269027?auto=format&fit=crop&w=900&q=80"
+                      alt="Pemandangan alam terbuka"
+                      loading="lazy">
+                    <figcaption>
+                        Gambar 3. Alam terbuka sebagai tempat rekreasi.
+                    </figcaption>
+                </figure>
+
+            </div>
+
+            <small>
+                Catatan: Gambar ilustrasi menggunakan layanan
+                Unsplash dan membutuhkan koneksi internet.
+            </small>
+        </section>
+
+        <!-- ===== TABEL ===== -->
+        <section id="tabel">
+            <h2>5. Rekomendasi Kegiatan Berdasarkan Usia</h2>
+
+            <p>
+                Setiap kelompok usia memiliki kebutuhan dan
+                kemampuan fisik yang berbeda. Oleh karena itu,
+                kegiatan olahraga rekreasi sebaiknya disesuaikan
+                dengan kondisi peserta agar tetap aman,
+                nyaman, dan menyenangkan.
+            </p>
+
+            <div class="tabel-wrapper">
+                <table>
+                    <caption>
+                        <strong>Tabel Rekomendasi Olahraga Rekreasi</strong>
+                    </caption>
+
+                    <thead>
+                        <tr>
+                            <th>Kelompok Usia</th>
+                            <th>Contoh Kegiatan</th>
+                            <th>Manfaat Utama</th>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+                        <tr>
+                            <td>6–12 tahun</td>
+                            <td>Permainan tradisional, estafet</td>
+                            <td>Koordinasi dan kerja sama</td>
+                        </tr>
+
+                        <tr>
+                            <td>13–18 tahun</td>
+                            <td>Berenang, bersepeda, permainan tim</td>
+                            <td>Kebugaran dan interaksi sosial</td>
+                        </tr>
+
+                        <tr>
+                            <td>19–30 tahun</td>
+                            <td>Jogging, hiking, outbound</td>
+                            <td>Daya tahan dan pengurangan stres</td>
+                        </tr>
+
+                        <tr>
+                            <td>31–45 tahun</td>
+                            <td>Senam, jalan cepat, bersepeda</td>
+                            <td>Kebugaran dan kesehatan tubuh</td>
+                        </tr>
+
+                        <tr>
+                            <td>46 tahun ke atas</td>
+                            <td>Jalan santai, senam ringan</td>
+                            <td>Mobilitas dan keseimbangan</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <p>
+                <small>
+                    Tabel ini merupakan contoh rekomendasi umum,
+                    bukan batasan mutlak berdasarkan usia.
+                    Intensitas kegiatan perlu disesuaikan
+                    dengan kemampuan dan kondisi kesehatan.
+                </small>
+            </p>
+        </section>
+
+        <!-- ===== FORMAT TEKS HTML ===== -->
+        <section>
+            <h2>6. Istilah Penting dalam Olahraga Rekreasi</h2>
+
+            <p>
+                Dalam dunia olahraga terdapat beberapa istilah
+                yang sering digunakan. Salah satunya adalah
+                <abbr title="Aktivitas Fisik">AF</abbr>,
+                yaitu singkatan dari Aktivitas Fisik.
+                Arahkan kursor atau tekan singkatan tersebut
+                untuk melihat kepanjangannya.
+            </p>
+
+            <p>
+                Organisasi kesehatan dunia dikenal dengan
+                <abbr title="World Health Organization">WHO</abbr>.
+                Organisasi ini memberikan informasi dan
+                rekomendasi terkait kesehatan masyarakat,
+                termasuk aktivitas fisik.
+            </p>
+
+            <p>
+                Saat berolahraga, tubuh memerlukan energi dan
+                oksigen (O<sub>2</sub>) untuk mendukung kerja
+                otot. Tubuh juga menghasilkan karbon dioksida
+                (CO<sub>2</sub>) yang dikeluarkan melalui
+                proses pernapasan.
+            </p>
+
+            <p>
+                Dalam matematika sederhana, luas area berbentuk
+                persegi dapat dihitung dengan rumus
+                sisi<sup>2</sup>. Perhitungan ini dapat
+                membantu saat memperkirakan luas area
+                untuk kegiatan permainan rekreasi.
+            </p>
+
+            <h3>Perubahan Pola Pikir tentang Olahraga</h3>
+
+            <p>
+                Dahulu, sebagian orang mungkin beranggapan
+                bahwa olahraga hanya untuk orang yang ingin
+                menjadi atlet. Anggapan tersebut perlu
+                <del>dipertahankan</del>
+                <ins>diubah</ins>, karena olahraga juga dapat
+                dilakukan untuk kesehatan dan kesenangan.
+            </p>
+
+            <p>
+                <b>Kesimpulannya,</b> olahraga rekreasi
+                <strong>sangat penting</strong> sebagai
+                bagian dari gaya hidup aktif.
+                Kita dapat melakukannya dengan cara
+                <em>menyenangkan dan sesuai kemampuan.</em>
+            </p>
+
+            <p>
+                <small>
+                    Informasi ini disusun untuk tujuan
+                    pembelajaran dan edukasi.
+                </small>
+            </p>
+        </section>
+
+        <!-- ===== TIPS KESELAMATAN ===== -->
+        <section>
+            <h2>7. Tips Aman Melakukan Olahraga Rekreasi</h2>
+
+            <p>
+                Walaupun olahraga rekreasi bertujuan untuk
+                bersenang-senang, keselamatan tetap harus
+                menjadi perhatian utama. Persiapan yang baik
+                dapat membantu mengurangi risiko cedera.
+            </p>
+
+            <ol>
+                <li>
+                    <strong>Pemanasan:</strong>
+                    Lakukan gerakan ringan sebelum memulai
+                    aktivitas agar tubuh lebih siap bergerak.
+                </li>
+
+                <li>
+                    <strong>Gunakan perlengkapan yang sesuai:</strong>
+                    Pilih sepatu, pakaian, dan alat olahraga
+                    yang aman serta nyaman digunakan.
+                </li>
+
+                <li>
+                    <strong>Perhatikan kebutuhan cairan:</strong>
+                    Minumlah air sesuai kebutuhan sebelum,
+                    selama, dan setelah beraktivitas.
+                </li>
+
+                <li>
+                    <strong>Kenali kemampuan diri:</strong>
+                    Jangan memaksakan aktivitas yang terlalu
+                    berat apabila tubuh belum terbiasa.
+                </li>
+
+                <li>
+                    <strong>Lakukan pendinginan:</strong>
+                    Akhiri kegiatan secara bertahap dengan
+                    gerakan ringan.
+                </li>
+            </ol>
+
+            <p class="highlight">
+                <strong>Ingat!</strong>
+                Keselamatan peserta harus lebih diutamakan
+                daripada kecepatan atau kemenangan permainan.
+            </p>
+        </section>
+
+        <!-- ===== JADWAL CONTOH ===== -->
+        <section>
+            <h2>8. Contoh Jadwal Olahraga Rekreasi</h2>
+
+            <p>
+                Berikut contoh jadwal sederhana yang dapat
+                digunakan sebagai inspirasi untuk membangun
+                kebiasaan hidup aktif dalam satu minggu.
+            </p>
+
+            <div class="tabel-wrapper">
+                <table>
+                    <tr>
+                        <th>Hari</th>
+                        <th>Kegiatan</th>
+                        <th>Durasi Contoh</th>
+                    </tr>
+
+                    <tr>
+                        <td>Senin</td>
+                        <td>Jalan santai</td>
+                        <td>30 menit</td>
+                    </tr>
+
+                    <tr>
+                        <td>Rabu</td>
+                        <td>Senam rekreasi</td>
+                        <td>30 menit</td>
+                    </tr>
+
+                    <tr>
+                        <td>Jumat</td>
+                        <td>Bersepeda santai</td>
+                        <td>40 menit</td>
+                    </tr>
+
+                    <tr>
+                        <td>Minggu</td>
+                        <td>Berenang atau permainan kelompok</td>
+                        <td>45 menit</td>
+                    </tr>
+                </table>
+            </div>
+
+            <p>
+                Jadwal tersebut hanya contoh dan dapat
+                disesuaikan dengan waktu luang, kondisi
+                tubuh, serta kebutuhan setiap orang.
+            </p>
+        </section>
+
+        <!-- ===== FAQ INTERAKTIF ===== -->
+        <section id="faq">
+            <h2>9. Pertanyaan yang Sering Diajukan</h2>
+
+            <details>
+                <summary>
+                    Apakah olahraga rekreasi harus dilakukan
+                    di tempat khusus?
+                </summary>
+                <p>
+                    Tidak. Olahraga rekreasi dapat dilakukan
+                    di rumah, taman, lapangan, kolam renang,
+                    maupun lingkungan terbuka lainnya.
+                </p>
+            </details>
+
+            <details>
+                <summary>
+                    Apakah olahraga rekreasi cocok untuk
+                    semua kelompok usia?
+                </summary>
+                <p>
+                    Pada dasarnya olahraga rekreasi dapat
+                    diikuti berbagai kelompok usia.
+                    Namun, jenis dan intensitas aktivitas
+                    perlu disesuaikan dengan kondisi peserta.
+                </p>
+            </details>
+
+            <details>
+                <summary>
+                    Apa perbedaan rekreasi aktif dan pasif?
+                </summary>
+                <p>
+                    Rekreasi aktif melibatkan gerakan atau
+                    partisipasi langsung, seperti bersepeda
+                    dan bermain bola. Rekreasi pasif lebih
+                    menekankan kegiatan menikmati atau
+                    mengamati, seperti menonton pertunjukan.
+                </p>
+            </details>
+
+            <details>
+                <summary>
+                    Mengapa olahraga rekreasi penting
+                    bagi mahasiswa?
+                </summary>
+                <p>
+                    Karena dapat menjadi sarana menjaga
+                    kebugaran, mengurangi kejenuhan kuliah,
+                    memperluas pertemanan, dan mengisi
+                    waktu luang dengan kegiatan positif.
+                </p>
+            </details>
+        </section>
+
+        <!-- ===== KUIS INTERAKTIF ===== -->
+        <section>
+            <h2>10. Kuis Pengetahuan Olahraga Rekreasi</h2>
+
+            <p>
+                Yuk, coba jawab pertanyaan sederhana berikut
+                untuk menguji pemahamanmu!
+            </p>
+
+            <h3>Apa tujuan utama olahraga rekreasi?</h3>
+
+            <label for="jawaban">Pilih jawaban:</label>
+
+            <select id="jawaban">
+                <option value="">-- Pilih jawaban --</option>
+                <option value="a">Menjadi juara dunia</option>
+                <option value="b">Kesehatan dan kesenangan</option>
+                <option value="c">Mengalahkan semua peserta</option>
+            </select>
+
+            <button onclick="periksaJawaban()">
+                Periksa Jawaban
+            </button>
+
+            <p id="hasilKuis" aria-live="polite"></p>
+        </section>
+
+        <!-- ===== LINK DAN REFERENSI ===== -->
+        <section>
+            <h2>11. Sumber Informasi dan Referensi</h2>
+
+            <p>
+                Untuk memperluas pengetahuan mengenai
+                olahraga, kesehatan, dan aktivitas fisik,
+                kita dapat mempelajari informasi melalui
+                berbagai sumber terpercaya.
+            </p>
+
+            <ul>
+                <li>
+                    <a href="https://www.who.int"
+                       target="_blank"
+                       rel="noopener noreferrer">
+                        World Health Organization (WHO)
+                    </a>
+                    — Informasi kesehatan dan aktivitas fisik.
+                </li>
+
+                <li>
+                    <a href="https://www.kemenpora.go.id"
+                       target="_blank"
+                       rel="noopener noreferrer">
+                        Kementerian Pemuda dan Olahraga
+                    </a>
+                    — Informasi kegiatan dan kebijakan olahraga.
+                </li>
+
+                <li>
+                    <a href="https://unj.ac.id"
+                       target="_blank"
+                       rel="noopener noreferrer">
+                        Universitas Negeri Jakarta
+                    </a>
+                    — Informasi mengenai lingkungan akademik.
+                </li>
+            </ul>
+
+            <p>
+                <small>
+                    Tautan di atas merupakan referensi umum
+                    untuk pembelajaran lebih lanjut.
+                </small>
+            </p>
+        </section>
+
+        <!-- ===== FORMULIR ===== -->
+        <section id="kontak">
+            <h2>12. Formulir Pendapat Pengunjung</h2>
+
+            <p>
+                Setelah membaca materi tentang olahraga
+                rekreasi, pengunjung dapat memberikan
+                pendapat mengenai kegiatan olahraga
+                yang paling mereka sukai.
+            </p>
+
+            <form id="formPendapat">
+
+                <label for="nama">Nama Pengunjung:</label>
+                <input type="text"
+                       id="nama"
+                       placeholder="Masukkan nama"
+                       required>
+
+                <label for="olahraga">
+                    Olahraga Rekreasi Favorit:
+                </label>
+
+                <select id="olahraga" required>
+                    <option value="">-- Pilih olahraga --</option>
+                    <option>Berenang</option>
+                    <option>Bersepeda</option>
+                    <option>Jogging</option>
+                    <option>Senam</option>
+                    <option>Outbound</option>
+                    <option>Lainnya</option>
+                </select>
+
+                <label for="pesan">
+                    Alasan Menyukai Olahraga Tersebut:
+                </label>
+
+                <textarea id="pesan"
+                          rows="5"
+                          placeholder="Tuliskan pendapat kamu..."
+                          required></textarea>
+
+                <button type="submit">
+                    Kirim Pendapat
+                </button>
+            </form>
+
+            <p id="hasilForm" aria-live="polite"></p>
+
+            <small>
+                Formulir ini merupakan demonstrasi interaktif.
+                Data tidak dikirim ke server atau disimpan
+                dalam database.
+            </small>
+        </section>
+
+        <!-- ===== PENUTUP ===== -->
+        <section>
+            <h2>13. Kesimpulan</h2>
+
+            <p>
+                Berdasarkan pembahasan di atas, dapat
+                disimpulkan bahwa olahraga rekreasi
+                merupakan kegiatan yang memiliki banyak
+                manfaat dalam kehidupan sehari-hari.
+                Selain membantu menjaga kesehatan tubuh,
+                olahraga rekreasi juga dapat meningkatkan
+                kebahagiaan, mengurangi stres, dan
+                mempererat hubungan sosial.
+            </p>
+
+            <p>
+                Menurut saya, olahraga rekreasi seharusnya
+                menjadi bagian dari kebiasaan masyarakat
+                karena kegiatannya dapat dilakukan oleh
+                berbagai kalangan. Kita tidak harus menjadi
+                atlet untuk menikmati manfaat olahraga.
+                Hal terpenting adalah memiliki kemauan
+                untuk bergerak dan memilih aktivitas
+                yang sesuai dengan kemampuan diri.
+            </p>
+
+            <p>
+                Sebagai mahasiswa Program Studi Olahraga
+                Rekreasi, saya berharap semakin banyak
+                masyarakat yang memahami bahwa olahraga
+                tidak selalu harus dilakukan melalui
+                pertandingan. Olahraga juga bisa menjadi
+                sarana hiburan, pembelajaran, dan kegiatan
+                positif yang menyenangkan.
+            </p>
+
+            <p style="text-align: center;
+                      font-size: 21px;
+                      color: #087e8b;">
+                <strong>
+                    "Ayo Bergerak, Tetap Sehat,
+                    dan Nikmati Setiap Aktivitas!"
+                </strong>
+            </p>
+
+            <div style="text-align:center;">
+                <a class="tombol" href="#atas">
+                    ↑ Kembali ke Awal
+                </a>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- ===== COPYRIGHT ===== -->
+    <footer>
+        <h3 style="color:white;">🌿 Olahraga Rekreasi</h3>
+
+        <p>
+            Dibuat oleh Amalia Fitriyani
+        </p>
+
+        <p>
+            NIM: 1605625006
+        </p>
+
+        <p>
+            Program Studi Olahraga Rekreasi
+            | Universitas Negeri Jakarta
+        </p>
+
+        <p>
+            &copy; <span id="tahun"></span>
+            Amalia Fitriyani. All Rights Reserved.
+        </p>
+    </footer>
+
+    <!-- TOMBOL MELAYANG -->
+    <button id="keAtas"
+            onclick="window.scrollTo({top:0,behavior:'smooth'})"
+            aria-label="Kembali ke atas">
+        ↑
+    </button>
+
+    <!-- ===== JAVASCRIPT INTERAKTIF ===== -->
+    <script>
+
+        // Mengubah tampilan terang dan gelap
+        function gantiTema() {
+            document.body.classList.toggle("dark");
+        }
+
+        // Memeriksa jawaban kuis
+        function periksaJawaban() {
+            const jawaban = document.getElementById("jawaban").value;
+            const hasil = document.getElementById("hasilKuis");
+
+            if (jawaban === "b") {
+                hasil.textContent =
+                    "🎉 Benar! Olahraga rekreasi bertujuan " +
+                    "menjaga kesehatan dan memberikan kesenangan.";
+                hasil.style.color = "#159447";
+            } else if (jawaban === "") {
+                hasil.textContent =
+                    "Silakan pilih jawaban terlebih dahulu.";
+                hasil.style.color = "#d97706";
+            } else {
+                hasil.textContent =
+                    "Belum tepat. Coba ingat kembali " +
+                    "tujuan utama olahraga rekreasi.";
+                hasil.style.color = "#d94343";
+            }
+        }
+
+        // Menampilkan pesan dari formulir
+        document.getElementById("formPendapat")
+            .addEventListener("submit", function(event) {
+
+                event.preventDefault();
+
+                const nama =
+                    document.getElementById("nama").value;
+
+                const olahraga =
+                    document.getElementById("olahraga").value;
+
+                const hasil =
+                    document.getElementById("hasilForm");
+
+                hasil.textContent =
+                    "Terima kasih, " + nama +
+                    "! Kamu menyukai olahraga " +
+                    olahraga +
+                    ". Terus semangat berolahraga!";
+
+                hasil.style.color = "#159447";
+
+                this.reset();
+            });
+
+        // Tahun copyright otomatis
+        document.getElementById("tahun").textContent =
+            new Date().getFullYear();
+
+        // Menampilkan tombol kembali ke atas
+        window.addEventListener("scroll", function() {
+            const tombol = document.getElementById("keAtas");
+
+            if (window.scrollY > 350) {
+                tombol.style.display = "block";
+            } else {
+                tombol.style.display = "none";
+            }
+        });
+
+    </script>
+
+</body>
+</html>
